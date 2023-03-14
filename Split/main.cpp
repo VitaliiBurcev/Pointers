@@ -1,43 +1,30 @@
 #include<iostream>
 using namespace std;
 
-void FilRand(int arr[], const int n);
-void Print(int arr[], const int n);
+void Exchenge(int* a,int* b);
 
 void main()
 {
 	setlocale(LC_ALL, "");
-	int n;
-	cout << "Введите размер массива: ";
-	cin >> n;
+	
 
-	int* arr = new int[n];
-	FilRand(arr, n);
-	Print(arr, n);
-}
+	int a = 2, int b = 3;
+	cout << a << "\t" << b << endl;
 
+	cout << &a << "\t" << &b << endl;
 
-void FilRand(int arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
+	Exchenge(&a, &b);
 
-		*(arr + i) = rand() % 100;  //Обращение к элементам массива через арифметику указателей и оператор разыменования
-	}
+	cout << a << "\t" << b << endl;
 
 }
 
-void Print(int arr[], const int n)
+
+void Exchenge(int* a, int* b)
 {
-
-
-	for (int i = 0; i < n; i++)
-	{
-
-		//Обращение к элементам массива через  оператор индексирования:
-		cout << arr[i] << "\t";
-
-	}
-	cout << endl;
+	int buffer = *a;
+	*a = *b;
+	*b = buffer;
+	cout << &a << "\t" << &b << endl;
 
 }
