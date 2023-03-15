@@ -12,7 +12,7 @@ int* pop_back(int arr[],  int& n, int value); //Функция удаления одного элемента
 void main()
 {
 	setlocale(LC_ALL, "");
-	int n;
+	const int n;
 	cout << "Введите размер массива: ";
 	cin >> n;
 
